@@ -1,0 +1,634 @@
+{
+  "trends": [
+    {
+      "id": "trend-1",
+      "type": "trend",
+      "title": "AI-Native Work",
+      "description": "Businesses built from day one with AI as core infrastructure, not bolted on",
+      "tags": ["AI", "Future of Work"],
+      "timeHorizon": "1-3 yrs",
+      "category": "AI"
+    },
+    {
+      "id": "trend-2",
+      "type": "trend",
+      "title": "Climate Adaptation",
+      "description": "Tech and services helping communities adapt to climate change impacts",
+      "tags": ["Climate", "Infrastructure"],
+      "timeHorizon": "3-5 yrs",
+      "category": "Climate"
+    },
+    {
+      "id": "trend-3",
+      "type": "trend",
+      "title": "Bio-Integrated Healthspan",
+      "description": "AI and biotech converge to extend healthy years of life with personalized protocols",
+      "tags": ["Health", "Biotech", "AI"],
+      "timeHorizon": "3-5 yrs",
+      "category": "Health"
+    },
+    {
+      "id": "trend-4",
+      "type": "trend",
+      "title": "Agentic Productivity OS",
+      "description": "Personal and team operating systems built around AI agents that manage workflows",
+      "tags": ["AI", "Productivity"],
+      "timeHorizon": "1-3 yrs",
+      "category": "AI"
+    },
+    {
+      "id": "trend-5",
+      "type": "trend",
+      "title": "Spatial & Mixed Reality Interfaces",
+      "description": "AR and spatial computing blend digital workflows into physical space",
+      "tags": ["AR/VR", "Interfaces"],
+      "timeHorizon": "3-5 yrs",
+      "category": "Spatial"
+    },
+    {
+      "id": "trend-6",
+      "type": "trend",
+      "title": "On-Chain Finance & RWAs",
+      "description": "Capital markets move onto programmable rails with tokenized real-world assets",
+      "tags": ["Blockchain", "Finance"],
+      "timeHorizon": "3-5 yrs",
+      "category": "Finance"
+    },
+    {
+      "id": "trend-7",
+      "type": "trend",
+      "title": "Creator-Led Brands",
+      "description": "Creators evolve into full-stack brands with owned products and communities",
+      "tags": ["Creator Economy", "Brand"],
+      "timeHorizon": "1-3 yrs",
+      "category": "Media"
+    },
+    {
+      "id": "trend-8",
+      "type": "trend",
+      "title": "Regenerative Communities",
+      "description": "Place-based communities optimized for ecology, wellness, and shared ownership",
+      "tags": ["Real Estate", "Wellness", "Climate"],
+      "timeHorizon": "3-5 yrs",
+      "category": "Climate"
+    },
+    {
+      "id": "trend-9",
+      "type": "trend",
+      "title": "Autonomous Infrastructure",
+      "description": "Microgrids, sensors, and automation running energy, water, and local services",
+      "tags": ["Infrastructure", "Energy"],
+      "timeHorizon": "3-5 yrs",
+      "category": "Infrastructure"
+    },
+    {
+      "id": "trend-10",
+      "type": "trend",
+      "title": "AI-First Education",
+      "description": "Personalized AI tutors reshape how people learn skills across their lifespan",
+      "tags": ["Education", "AI"],
+      "timeHorizon": "1-3 yrs",
+      "category": "Education"
+    },
+    {
+      "id": "trend-11",
+      "type": "trend",
+      "title": "Synthetic Media & Virtual Personas",
+      "description": "Hyper-realistic generated media and avatars become standard communication tools",
+      "tags": ["Media", "AI"],
+      "timeHorizon": "1-3 yrs",
+      "category": "Media"
+    },
+    {
+      "id": "trend-12",
+      "type": "trend",
+      "title": "Mental Health & Nervous System Tech",
+      "description": "Wearables and software for stress, sleep, and emotional regulation go mainstream",
+      "tags": ["Health", "Wellness"],
+      "timeHorizon": "1-3 yrs",
+      "category": "Health"
+    },
+    {
+      "id": "trend-13",
+      "type": "trend",
+      "title": "Citizen Data Cooperatives",
+      "description": "Communities and users pool and monetize their data with better privacy controls",
+      "tags": ["Data", "Governance"],
+      "timeHorizon": "3-5 yrs",
+      "category": "Governance"
+    },
+    {
+      "id": "trend-14",
+      "type": "trend",
+      "title": "Urban Resilience & Smart Cities",
+      "description": "Cities invest in resilience tech for climate shocks, safety, and mobility",
+      "tags": ["Urban", "Climate"],
+      "timeHorizon": "3-5 yrs",
+      "category": "Urban"
+    },
+    {
+      "id": "trend-15",
+      "type": "trend",
+      "title": "Everyday Robotics",
+      "description": "Affordable robots become common in commercial and domestic environments",
+      "tags": ["Robotics", "Automation"],
+      "timeHorizon": "3-5 yrs",
+      "category": "Robotics"
+    },
+    {
+      "id": "trend-16",
+      "type": "trend",
+      "title": "Distributed & Asynchronous Teams",
+      "description": "Remote-first and async collaboration becomes default for high-skill work",
+      "tags": ["Future of Work", "Remote"],
+      "timeHorizon": "1-3 yrs",
+      "category": "Work"
+    },
+    {
+      "id": "trend-17",
+      "type": "trend",
+      "title": "Longevity & Preventive Care",
+      "description": "Shift from sick-care to proactive, data-driven longevity programs",
+      "tags": ["Health", "Longevity"],
+      "timeHorizon": "3-5 yrs",
+      "category": "Health"
+    },
+    {
+      "id": "trend-18",
+      "type": "trend",
+      "title": "Ambient Computing & Voice Interfaces",
+      "description": "Interfaces disappear into the environment with voice and context-aware systems",
+      "tags": ["Interfaces", "AI"],
+      "timeHorizon": "1-3 yrs",
+      "category": "AI"
+    },
+    {
+      "id": "trend-19",
+      "type": "trend",
+      "title": "Localized Manufacturing & Prosumer Tools",
+      "description": "3D printing and small-scale manufacturing empower local production",
+      "tags": ["Manufacturing", "Hardware"],
+      "timeHorizon": "3-5 yrs",
+      "category": "Manufacturing"
+    },
+    {
+      "id": "trend-20",
+      "type": "trend",
+      "title": "Decentralized Science & Open Research",
+      "description": "New funding and coordination models open up scientific research",
+      "tags": ["Science", "Blockchain"],
+      "timeHorizon": "3-5 yrs",
+      "category": "Science"
+    }
+  ],
+  "problems": [
+    {
+      "id": "problem-1",
+      "type": "problem",
+      "title": "AI Overwhelm for Solopreneurs",
+      "description": "Too many AI tools, no clear workflow for solo business owners",
+      "tags": ["AI", "SMB"],
+      "persona": "Solopreneur / Freelancer",
+      "painLevelHint": 4
+    },
+    {
+      "id": "problem-2",
+      "type": "problem",
+      "title": "Compliance Burden for Startups",
+      "description": "Early-stage companies struggle with growing regulatory requirements",
+      "tags": ["Legal", "Startup"],
+      "persona": "Startup Founder",
+      "painLevelHint": 3
+    },
+    {
+      "id": "problem-3",
+      "type": "problem",
+      "title": "Founder Decision Fatigue",
+      "description": "Founders burn out making too many high-stakes decisions with incomplete data",
+      "tags": ["Startup", "Mental Health"],
+      "persona": "Founder / CEO",
+      "painLevelHint": 4
+    },
+    {
+      "id": "problem-4",
+      "type": "problem",
+      "title": "Financing Regenerative Projects",
+      "description": "Small developers cannot easily access aligned capital for regenerative real estate",
+      "tags": ["Real Estate", "Finance"],
+      "persona": "Small Developer",
+      "painLevelHint": 5
+    },
+    {
+      "id": "problem-5",
+      "type": "problem",
+      "title": "Remote Team Misalignment",
+      "description": "Distributed teams struggle to stay aligned on priorities and outcomes",
+      "tags": ["Remote Work", "Teams"],
+      "persona": "Team Lead / Manager",
+      "painLevelHint": 3
+    },
+    {
+      "id": "problem-6",
+      "type": "problem",
+      "title": "Creator Revenue Volatility",
+      "description": "Creators face unpredictable income and lack reliable monetization infrastructure",
+      "tags": ["Creator Economy", "Finance"],
+      "persona": "Creator / Influencer",
+      "painLevelHint": 4
+    },
+    {
+      "id": "problem-7",
+      "type": "problem",
+      "title": "Data Fragmentation Across Tools",
+      "description": "Important business data is scattered across many SaaS products with no source of truth",
+      "tags": ["SaaS", "Data"],
+      "persona": "Operations Lead",
+      "painLevelHint": 4
+    },
+    {
+      "id": "problem-8",
+      "type": "problem",
+      "title": "Onboarding to AI Tooling",
+      "description": "Knowledge workers struggle to integrate AI into daily workflows and habits",
+      "tags": ["AI", "Productivity"],
+      "persona": "Knowledge Worker",
+      "painLevelHint": 3
+    },
+    {
+      "id": "problem-9",
+      "type": "problem",
+      "title": "Climate Risk Blind Spots",
+      "description": "Property owners and communities lack clear views of localized climate risk",
+      "tags": ["Climate", "Real Estate"],
+      "persona": "Property Owner / City Planner",
+      "painLevelHint": 4
+    },
+    {
+      "id": "problem-10",
+      "type": "problem",
+      "title": "Nervous System Burnout",
+      "description": "High performers lack simple, data-informed tools to manage stress and recovery",
+      "tags": ["Health", "Wellness"],
+      "persona": "Executive / Founder",
+      "painLevelHint": 5
+    },
+    {
+      "id": "problem-11",
+      "type": "problem",
+      "title": "Inefficient Deal Flow Management",
+      "description": "Investors and syndicates juggle deals in spreadsheets and fragmented tools",
+      "tags": ["Finance", "VC"],
+      "persona": "Angel / Fund Manager",
+      "painLevelHint": 3
+    },
+    {
+      "id": "problem-12",
+      "type": "problem",
+      "title": "Community Engagement Drop-off",
+      "description": "Online and offline communities struggle to maintain engagement over time",
+      "tags": ["Community", "Engagement"],
+      "persona": "Community Builder",
+      "painLevelHint": 3
+    },
+    {
+      "id": "problem-13",
+      "type": "problem",
+      "title": "Outdated Real Estate Operations",
+      "description": "Small property operators rely on spreadsheets and paper for key workflows",
+      "tags": ["Real Estate", "Operations"],
+      "persona": "Property Manager",
+      "painLevelHint": 4
+    },
+    {
+      "id": "problem-14",
+      "type": "problem",
+      "title": "Lack of Trusted Expert Filters",
+      "description": "Founders can’t easily find curated, context-aware advice in noisy content feeds",
+      "tags": ["Content", "Advisory"],
+      "persona": "Founder / Operator",
+      "painLevelHint": 3
+    },
+    {
+      "id": "problem-15",
+      "type": "problem",
+      "title": "High Friction in Cross-Org Collaboration",
+      "description": "Partnerships between startups and enterprises stall in legal and process bottlenecks",
+      "tags": ["Enterprise", "Partnerships"],
+      "persona": "BD / Partnership Lead",
+      "painLevelHint": 3
+    },
+    {
+      "id": "problem-16",
+      "type": "problem",
+      "title": "Underutilized Real Estate Spaces",
+      "description": "Spaces sit idle instead of being activated for events, retreats, or pop-ups",
+      "tags": ["Real Estate", "Utilization"],
+      "persona": "Owner / Asset Manager",
+      "painLevelHint": 3
+    },
+    {
+      "id": "problem-17",
+      "type": "problem",
+      "title": "Slow Experimentation Cycles",
+      "description": "Teams struggle to run frequent, well-instrumented experiments on new ideas",
+      "tags": ["Product", "Growth"],
+      "persona": "Product / Growth Lead",
+      "painLevelHint": 4
+    },
+    {
+      "id": "problem-18",
+      "type": "problem",
+      "title": "Wellness Programs with No ROI",
+      "description": "Companies invest in wellness perks without measurable impact on performance",
+      "tags": ["HR", "Wellness"],
+      "persona": "People Ops / HR",
+      "painLevelHint": 2
+    },
+    {
+      "id": "problem-19",
+      "type": "problem",
+      "title": "Underfunded Climate Adaptation Needs",
+      "description": "Local governments and NGOs can’t access innovative financing for adaptation projects",
+      "tags": ["Climate", "Public Sector"],
+      "persona": "City / NGO Leader",
+      "painLevelHint": 4
+    },
+    {
+      "id": "problem-20",
+      "type": "problem",
+      "title": "Fragmented Learning Journeys",
+      "description": "Professionals can’t see how their courses, content, and experiences connect over time",
+      "tags": ["Education", "Career"],
+      "persona": "Lifelong Learner",
+      "painLevelHint": 3
+    }
+  ],
+  "tech": [
+    {
+      "id": "tech-1",
+      "type": "tech",
+      "title": "AI Agents",
+      "description": "Autonomous AI systems that can plan and execute multi-step tasks",
+      "tags": ["AI", "Automation"],
+      "techCategory": "AI"
+    },
+    {
+      "id": "tech-2",
+      "type": "tech",
+      "title": "On-Chain RWAs",
+      "description": "Real-world assets tokenized and traded on blockchain",
+      "tags": ["Blockchain", "Finance"],
+      "techCategory": "Blockchain"
+    },
+    {
+      "id": "tech-3",
+      "type": "tech",
+      "title": "LLM Co-Pilots",
+      "description": "Large language model-based assistants integrated into workflows",
+      "tags": ["AI", "Productivity"],
+      "techCategory": "AI"
+    },
+    {
+      "id": "tech-4",
+      "type": "tech",
+      "title": "Biometrics & Wearables",
+      "description": "Sensors tracking physiology such as HRV, sleep, and movement",
+      "tags": ["Health", "Hardware"],
+      "techCategory": "Biotech"
+    },
+    {
+      "id": "tech-5",
+      "type": "tech",
+      "title": "Knowledge Graphs",
+      "description": "Structured representations of entities and relationships for better reasoning",
+      "tags": ["Data", "AI"],
+      "techCategory": "Data"
+    },
+    {
+      "id": "tech-6",
+      "type": "tech",
+      "title": "No-Code / Low-Code Automation",
+      "description": "Visual tools to build workflows and apps without deep engineering",
+      "tags": ["No-Code", "Automation"],
+      "techCategory": "Productivity"
+    },
+    {
+      "id": "tech-7",
+      "type": "tech",
+      "title": "AR / Spatial Computing",
+      "description": "Augmented reality and spatial computing devices for immersive interfaces",
+      "tags": ["AR/VR", "Interfaces"],
+      "techCategory": "Spatial"
+    },
+    {
+      "id": "tech-8",
+      "type": "tech",
+      "title": "Generative Media",
+      "description": "AI tools that create images, video, and audio from prompts",
+      "tags": ["Media", "AI"],
+      "techCategory": "AI"
+    },
+    {
+      "id": "tech-9",
+      "type": "tech",
+      "title": "Microgrid & Energy Storage",
+      "description": "Distributed energy systems with storage and smart routing",
+      "tags": ["Energy", "Infrastructure"],
+      "techCategory": "Energy"
+    },
+    {
+      "id": "tech-10",
+      "type": "tech",
+      "title": "IoT Sensing Networks",
+      "description": "Networks of low-cost sensors for environmental and asset monitoring",
+      "tags": ["IoT", "Sensors"],
+      "techCategory": "Hardware"
+    },
+    {
+      "id": "tech-11",
+      "type": "tech",
+      "title": "Digital Identity & Verifiable Credentials",
+      "description": "Standards for portable, verifiable identity and reputation",
+      "tags": ["Identity", "Security"],
+      "techCategory": "Identity"
+    },
+    {
+      "id": "tech-12",
+      "type": "tech",
+      "title": "Simulation & Digital Twins",
+      "description": "Virtual models of systems for planning and optimization",
+      "tags": ["Simulation", "AI"],
+      "techCategory": "Modeling"
+    },
+    {
+      "id": "tech-13",
+      "type": "tech",
+      "title": "Recommender Systems",
+      "description": "Algorithms that personalize content, products, or actions",
+      "tags": ["AI", "Personalization"],
+      "techCategory": "AI"
+    },
+    {
+      "id": "tech-14",
+      "type": "tech",
+      "title": "Edge Computing",
+      "description": "Processing data close to where it is generated for low latency",
+      "tags": ["Infrastructure", "Hardware"],
+      "techCategory": "Infrastructure"
+    }
+  ],
+  "assets": [
+    {
+      "id": "asset-1",
+      "type": "asset",
+      "title": "Regenerative Real Estate",
+      "description": "Deep expertise in sustainable, wellness-focused property development",
+      "tags": ["Real Estate", "Climate"],
+      "ownerPlayerName": "Deven"
+    },
+    {
+      "id": "asset-2",
+      "type": "asset",
+      "title": "Community & Retreat Design",
+      "description": "Experience designing transformative in-person retreats and community experiences",
+      "tags": ["Community", "Wellness"],
+      "ownerPlayerName": "Deven"
+    },
+    {
+      "id": "asset-3",
+      "type": "asset",
+      "title": "Capital Networks for Real Assets",
+      "description": "Relationships with investors interested in regenerative and wellness projects",
+      "tags": ["Finance", "Real Estate"],
+      "ownerPlayerName": "Deven"
+    },
+    {
+      "id": "asset-4",
+      "type": "asset",
+      "title": "SaaS GTM Playbook",
+      "description": "Proven go-to-market strategies for B2B SaaS",
+      "tags": ["Sales", "SaaS"],
+      "ownerPlayerName": "Michael"
+    },
+    {
+      "id": "asset-5",
+      "type": "asset",
+      "title": "Product Strategy & UX",
+      "description": "Ability to shape product vision and user journeys for 0-to-1 products",
+      "tags": ["Product", "UX"],
+      "ownerPlayerName": "Michael"
+    },
+    {
+      "id": "asset-6",
+      "type": "asset",
+      "title": "Full-Stack Engineering",
+      "description": "Experience building and shipping full-stack web applications",
+      "tags": ["Engineering", "Web"],
+      "ownerPlayerName": "Sean"
+    },
+    {
+      "id": "asset-7",
+      "type": "asset",
+      "title": "DevOps & Cloud Infrastructure",
+      "description": "Skills in deploying and scaling apps on modern cloud platforms",
+      "tags": ["DevOps", "Cloud"],
+      "ownerPlayerName": "Sean"
+    },
+    {
+      "id": "asset-8",
+      "type": "asset",
+      "title": "AI Tooling & Prompt Engineering",
+      "description": "Hands-on ability to integrate and orchestrate AI tools into products",
+      "tags": ["AI", "Developer Tools"],
+      "ownerPlayerName": "Sean"
+    },
+    {
+      "id": "asset-9",
+      "type": "asset",
+      "title": "Fundraising & Investor Network",
+      "description": "Relationships with angels, funds, and allocators for early-stage capital",
+      "tags": ["Finance", "VC"],
+      "ownerPlayerName": "David"
+    },
+    {
+      "id": "asset-10",
+      "type": "asset",
+      "title": "Corporate BD & Partnerships",
+      "description": "Track record of structuring partnerships between startups and enterprises",
+      "tags": ["BD", "Enterprise"],
+      "ownerPlayerName": "David"
+    }
+  ],
+  "markets": [
+    {
+      "id": "market-1",
+      "type": "market",
+      "title": "Independent Creators",
+      "description": "YouTubers, podcasters, newsletter writers earning from content",
+      "tags": ["Creator Economy"]
+    },
+    {
+      "id": "market-2",
+      "type": "market",
+      "title": "Boutique Developers",
+      "description": "Small real estate developers doing 1-10 projects/year",
+      "tags": ["Real Estate", "SMB"]
+    },
+    {
+      "id": "market-3",
+      "type": "market",
+      "title": "Seed-Stage Founders",
+      "description": "Early-stage startup founders building their first or second venture",
+      "tags": ["Startup", "Founder"]
+    },
+    {
+      "id": "market-4",
+      "type": "market",
+      "title": "Remote Knowledge Workers",
+      "description": "Professionals who work primarily from laptops across time zones",
+      "tags": ["Future of Work", "Remote"]
+    },
+    {
+      "id": "market-5",
+      "type": "market",
+      "title": "Wellness Retreat Operators",
+      "description": "Businesses running retreats focused on health, transformation, or leadership",
+      "tags": ["Wellness", "Hospitality"]
+    },
+    {
+      "id": "market-6",
+      "type": "market",
+      "title": "Digital Agencies & Studios",
+      "description": "Boutique agencies offering design, marketing, or development services",
+      "tags": ["Agency", "Services"]
+    },
+    {
+      "id": "market-7",
+      "type": "market",
+      "title": "Climate-Conscious Municipalities",
+      "description": "Cities and local governments actively planning for climate adaptation",
+      "tags": ["Climate", "Public Sector"]
+    },
+    {
+      "id": "market-8",
+      "type": "market",
+      "title": "Healthcare & Longevity Clinics",
+      "description": "Clinics offering advanced diagnostics, functional medicine, or longevity programs",
+      "tags": ["Health", "Longevity"]
+    },
+    {
+      "id": "market-9",
+      "type": "market",
+      "title": "Digital-First Communities",
+      "description": "Membership communities and cohorts that live primarily online",
+      "tags": ["Community", "Online"]
+    },
+    {
+      "id": "market-10",
+      "type": "market",
+      "title": "SMB Back Office Teams",
+      "description": "Small business teams responsible for operations, finance, and admin",
+      "tags": ["SMB", "Operations"]
+    }
+  ]
+}
