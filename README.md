@@ -4,7 +4,7 @@ A web-based multiplayer drafting game where founders draft cards (Trends, Proble
 
 ## Live Demo
 
-**Production:** https://signal-draft.vercel.app
+**Production:** https://signalgame.deven.network
 
 ## How to Play
 
