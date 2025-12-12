@@ -89,12 +89,19 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Footer */}
-      <footer className="mt-16 text-center text-gray-600 text-sm">
-        <p>2-6 players | 45-75 minutes | Best played in person</p>
-        <Link href="/guide" className="text-green-400 hover:text-green-300 mt-2 inline-block">
-          Read the full game guide →
+      {/* Game Guide CTA */}
+      <div className="mt-12 text-center">
+        <Link
+          href="/guide"
+          className="inline-block px-10 py-5 bg-gradient-to-r from-gray-800 to-gray-700 hover:from-gray-700 hover:to-gray-600 text-white font-bold rounded-2xl text-xl transition-all transform hover:scale-105 border border-gray-600 shadow-lg animate-pulse"
+        >
+          📖 Read the Game Guide
         </Link>
+      </div>
+
+      {/* Footer */}
+      <footer className="mt-12 text-center text-gray-600 text-sm">
+        <p>2-6 players | 45-75 minutes | Best played in person</p>
       </footer>
     </main>
   );
