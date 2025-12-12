@@ -25,9 +25,10 @@ const roundInstructions: Record<string, string> = {
 };
 
 export function BoardDraftView({ game, onAdvanceRound, isHost }: BoardDraftViewProps) {
-  const connectedPlayers = game.players.filter((p) => p.isConnected);
-  const lockedPlayers = connectedPlayers.filter((p) => p.hasLockedPicks);
-  const allLocked = lockedPlayers.length === connectedPlayers.length;
+  // Mobile players only (exclude host from drafting)
+  const mobilePlayers = game.players.filter((p) => p.isConnected && !p.isHost);
+  const lockedPlayers = mobilePlayers.filter((p) => p.hasLockedPicks);
+  const allLocked = mobilePlayers.length > 0 && lockedPlayers.length === mobilePlayers.length;
 
   // Get picks count based on round
   const getPicksCount = (playerId: string): number => {
@@ -74,7 +75,7 @@ export function BoardDraftView({ game, onAdvanceRound, isHost }: BoardDraftViewP
       {/* Progress Grid */}
       <div className="flex-1 flex items-center justify-center">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-5xl">
-          {connectedPlayers.map((player) => {
+          {mobilePlayers.map((player) => {
             const picks = getPicksCount(player.id);
             const maxPicks = getMaxPicks();
             const progress = (picks / maxPicks) * 100;
@@ -142,7 +143,7 @@ export function BoardDraftView({ game, onAdvanceRound, isHost }: BoardDraftViewP
           </div>
         ) : (
           <div className="text-xl text-gray-500 mb-4">
-            {lockedPlayers.length} / {connectedPlayers.length} players locked
+            {lockedPlayers.length} / {mobilePlayers.length} players locked
           </div>
         )}
 

@@ -216,7 +216,7 @@ export function transitionState(game: Game, newState: GameState): Game {
   return updatedGame;
 }
 
-// Deal cards to players for a round
+// Deal cards to players for a round (excludes host - they don't draft)
 function dealCards(game: Game, cardType: "trend" | "problem" | "tech"): Game {
   const availableCards = game.cards.filter(
     (c) => c.type === cardType && c.status === "available"
@@ -235,7 +235,10 @@ function dealCards(game: Game, cardType: "trend" | "problem" | "tech"): Game {
   const playerHands: Record<string, string[]> = {};
   const updatedCards = [...game.cards];
 
-  game.players.forEach((player, index) => {
+  // Only deal cards to non-host players (mobile users)
+  const mobilePlayers = game.players.filter((p) => !p.isHost);
+
+  mobilePlayers.forEach((player, index) => {
     const startIdx = index * cardsPerPlayer;
     const hand = shuffled.slice(startIdx, startIdx + cardsPerPlayer);
     playerHands[player.id] = hand.map((c) => c.id);
@@ -253,6 +256,12 @@ function dealCards(game: Game, cardType: "trend" | "problem" | "tech"): Game {
     });
   });
 
+  // Host gets empty hand but is auto-locked
+  const hostPlayer = game.players.find((p) => p.isHost);
+  if (hostPlayer) {
+    playerHands[hostPlayer.id] = [];
+  }
+
   return {
     ...game,
     playerHands,
@@ -260,6 +269,8 @@ function dealCards(game: Game, cardType: "trend" | "problem" | "tech"): Game {
     players: game.players.map((p) => ({
       ...p,
       hand: playerHands[p.id] || [],
+      // Auto-lock host since they don't participate in drafting
+      hasLockedPicks: p.isHost ? true : p.hasLockedPicks,
     })),
   };
 }
@@ -364,10 +375,10 @@ export function lockPicks(game: Game, playerId: string): Game {
   };
 }
 
-// Check if all players have locked their picks
+// Check if all players have locked their picks (excludes host)
 export function allPlayersLocked(game: Game): boolean {
   return game.players
-    .filter((p) => p.isConnected)
+    .filter((p) => p.isConnected && !p.isHost)
     .every((p) => p.hasLockedPicks);
 }
 
@@ -453,10 +464,10 @@ export function submitScore(
   };
 }
 
-// Check if all players have finished scoring
+// Check if all players have finished scoring (excludes host)
 export function allScoringComplete(game: Game): boolean {
   return game.players
-    .filter((p) => p.isConnected)
+    .filter((p) => p.isConnected && !p.isHost)
     .every((p) => game.scoringComplete.includes(p.id));
 }
 
