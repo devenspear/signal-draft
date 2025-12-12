@@ -2,6 +2,7 @@
 
 import { Game } from "@/lib/types";
 import { Button } from "@/components/ui/Button";
+import { QRCodeDisplay } from "@/components/ui/QRCodeDisplay";
 
 interface BoardLobbyProps {
   game: Game;
@@ -21,9 +22,9 @@ export function BoardLobby({ game, onStartGame, isHost }: BoardLobbyProps) {
         <div className="text-6xl md:text-8xl font-mono font-bold tracking-widest text-white board-text">
           {game.roomCode}
         </div>
-        <p className="text-gray-500 mt-4">
-          Share this code with players to join on their phones
-        </p>
+        <div className="mt-6">
+          <QRCodeDisplay roomCode={game.roomCode} size={180} />
+        </div>
       </div>
 
       {/* Players List */}
