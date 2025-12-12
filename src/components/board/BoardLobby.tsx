@@ -3,6 +3,7 @@
 import { Game } from "@/lib/types";
 import { Button } from "@/components/ui/Button";
 import { QRCodeDisplay } from "@/components/ui/QRCodeDisplay";
+import { Logo } from "@/components/ui/Logo";
 
 interface BoardLobbyProps {
   game: Game;
@@ -15,7 +16,12 @@ export function BoardLobby({ game, onStartGame, isHost }: BoardLobbyProps) {
   const canStart = connectedPlayers.length >= 2;
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center p-8">
+    <div className="min-h-screen flex flex-col items-center justify-center p-8 relative">
+      {/* Logo */}
+      <div className="absolute top-8 left-8">
+        <Logo size="medium" />
+      </div>
+
       {/* Room Code Display */}
       <div className="text-center mb-12">
         <p className="text-gray-500 text-xl mb-2">Room Code</p>

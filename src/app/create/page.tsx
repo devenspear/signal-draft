@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
+import { Logo } from "@/components/ui/Logo";
 
 export default function CreateGame() {
   const router = useRouter();
@@ -46,12 +46,9 @@ export default function CreateGame() {
 
   return (
     <main className="min-h-screen flex flex-col items-center justify-center p-8">
-      <Link
-        href="/"
-        className="absolute top-8 left-8 text-gray-500 hover:text-gray-300 transition-colors"
-      >
-        ← Back
-      </Link>
+      <div className="absolute top-8 left-8">
+        <Logo size="small" />
+      </div>
 
       <div className="w-full max-w-md">
         <h1 className="text-4xl font-bold text-center mb-2 bg-gradient-to-r from-green-400 to-emerald-400 text-transparent bg-clip-text">

@@ -1,6 +1,7 @@
 "use client";
 
 import { Game, Player } from "@/lib/types";
+import { Logo } from "@/components/ui/Logo";
 
 interface PlayerLobbyProps {
   game: Game;
@@ -12,6 +13,11 @@ export function PlayerLobby({ game, currentPlayer }: PlayerLobbyProps) {
 
   return (
     <div className="min-h-screen flex flex-col p-4">
+      {/* Logo */}
+      <div className="flex justify-center mb-4">
+        <Logo size="small" />
+      </div>
+
       {/* Header */}
       <div className="text-center mb-8">
         <p className="text-gray-500 text-sm mb-1">Room Code</p>

@@ -2,7 +2,7 @@
 
 import { useState, useEffect, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import Link from "next/link";
+import { Logo } from "@/components/ui/Logo";
 
 function JoinGameForm() {
   const router = useRouter();
@@ -160,12 +160,9 @@ function JoinGameForm() {
 export default function JoinGame() {
   return (
     <main className="min-h-screen flex flex-col items-center justify-center p-8">
-      <Link
-        href="/"
-        className="absolute top-8 left-8 text-gray-500 hover:text-gray-300 transition-colors"
-      >
-        ← Back
-      </Link>
+      <div className="absolute top-8 left-8">
+        <Logo size="small" />
+      </div>
 
       <Suspense
         fallback={

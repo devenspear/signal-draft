@@ -1,15 +1,24 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   return (
     <main className="min-h-screen flex flex-col items-center justify-center p-8">
       {/* Hero Section */}
       <div className="text-center max-w-3xl mx-auto mb-16">
-        <h1 className="text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-green-400 via-emerald-400 to-teal-400 text-transparent bg-clip-text">
-          Signal Draft
-        </h1>
+        {/* Logo */}
+        <div className="mb-8">
+          <Image
+            src="/logo.png"
+            alt="Signal Draft"
+            width={500}
+            height={300}
+            className="mx-auto"
+            priority
+          />
+        </div>
         <p className="text-xl md:text-2xl text-gray-400 mb-2">
           Founder Edition
         </p>
