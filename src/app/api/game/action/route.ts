@@ -12,7 +12,7 @@ import {
   removePlayer,
 } from "@/lib/game-state";
 import { getGame, saveGame } from "@/lib/kv";
-import { broadcastGameState, broadcastEvent, PUSHER_EVENTS } from "@/lib/pusher";
+import { broadcastStateChange, broadcastEvent, PUSHER_EVENTS } from "@/lib/pusher";
 import { GameActionType, GameState } from "@/lib/types";
 
 interface ActionPayload {
@@ -243,8 +243,8 @@ export async function POST(request: NextRequest) {
     // Save updated game
     await saveGame(game);
 
-    // Broadcast updated state
-    await broadcastGameState(roomCode, game);
+    // Broadcast lightweight state change notification
+    await broadcastStateChange(roomCode, game.state, type, game.players.length);
 
     return NextResponse.json({
       success: true,
@@ -323,7 +323,7 @@ export async function DELETE(request: NextRequest) {
     await saveGame(game);
 
     await broadcastEvent(roomCode, PUSHER_EVENTS.PLAYER_LEFT, { playerId });
-    await broadcastGameState(roomCode, game);
+    await broadcastStateChange(roomCode, game.state, "PLAYER_LEFT", game.players.length);
 
     return NextResponse.json({ success: true });
   } catch (error) {

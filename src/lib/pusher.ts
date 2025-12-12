@@ -47,17 +47,43 @@ export const PUSHER_EVENTS = {
   PHASE_CHANGED: "phase:changed",
 } as const;
 
-// Broadcast game state to all clients in a room
-export async function broadcastGameState(
+// Lightweight state update notification (tells clients to refetch)
+export interface StateUpdateNotification {
+  state: string;
+  timestamp: number;
+  trigger: string; // What caused this update
+  playerCount?: number;
+}
+
+// Broadcast a lightweight notification that state has changed
+// Clients should refetch full state from API
+export async function broadcastStateChange(
   roomCode: string,
-  gameState: unknown
+  state: string,
+  trigger: string,
+  playerCount?: number
 ): Promise<void> {
   const pusher = getPusherServer();
+  const notification: StateUpdateNotification = {
+    state,
+    timestamp: Date.now(),
+    trigger,
+    playerCount,
+  };
   await pusher.trigger(
     getGameChannel(roomCode),
     PUSHER_EVENTS.STATE_UPDATE,
-    gameState
+    notification
   );
+}
+
+// Legacy function - now sends lightweight notification instead
+export async function broadcastGameState(
+  roomCode: string,
+  gameState: { state: string; players?: { length: number }[] } & Record<string, unknown>
+): Promise<void> {
+  const playerCount = Array.isArray(gameState.players) ? gameState.players.length : undefined;
+  await broadcastStateChange(roomCode, gameState.state as string, "state_sync", playerCount);
 }
 
 // Broadcast a specific event to a room

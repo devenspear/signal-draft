@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createGame } from "@/lib/game-state";
 import { saveGame } from "@/lib/kv";
-import { broadcastGameState } from "@/lib/pusher";
+import { broadcastStateChange } from "@/lib/pusher";
 
 export async function POST(request: NextRequest) {
   try {
@@ -21,8 +21,8 @@ export async function POST(request: NextRequest) {
     // Save to KV store
     await saveGame(game);
 
-    // Broadcast initial state (for board view that might connect early)
-    await broadcastGameState(game.roomCode, game);
+    // Broadcast lightweight state change notification (for board view that might connect early)
+    await broadcastStateChange(game.roomCode, game.state, "GAME_CREATED", 1);
 
     return NextResponse.json({
       success: true,

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState, useCallback, useRef } from "react";
-import { getPusherClient, getGameChannel, PUSHER_EVENTS } from "@/lib/pusher";
+import { getPusherClient, getGameChannel, PUSHER_EVENTS, StateUpdateNotification } from "@/lib/pusher";
 import { Game } from "@/lib/types";
 import type { Channel } from "pusher-js";
 
@@ -110,9 +110,10 @@ export function useGameState({
     const channel = pusher.subscribe(channelName);
     channelRef.current = channel;
 
-    // Handle state updates
-    channel.bind(PUSHER_EVENTS.STATE_UPDATE, (data: Game) => {
-      setGame(data);
+    // Handle state updates - now receives lightweight notification, refetch full state
+    channel.bind(PUSHER_EVENTS.STATE_UPDATE, (data: StateUpdateNotification) => {
+      // Refetch full game state from API
+      fetchGameState();
     });
 
     // Handle player joined

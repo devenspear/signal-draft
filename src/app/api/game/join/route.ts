@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { addPlayer } from "@/lib/game-state";
 import { getGame, saveGame } from "@/lib/kv";
-import { broadcastGameState, broadcastEvent, PUSHER_EVENTS } from "@/lib/pusher";
+import { broadcastStateChange, broadcastEvent, PUSHER_EVENTS } from "@/lib/pusher";
 
 export async function POST(request: NextRequest) {
   try {
@@ -44,8 +44,8 @@ export async function POST(request: NextRequest) {
       playerName: playerName.trim(),
     });
 
-    // Broadcast updated game state
-    await broadcastGameState(roomCode, updatedGame);
+    // Broadcast lightweight state change notification
+    await broadcastStateChange(roomCode, updatedGame.state, "PLAYER_JOINED", updatedGame.players.length);
 
     return NextResponse.json({
       success: true,
