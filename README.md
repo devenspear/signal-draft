@@ -1,41 +1,84 @@
-# Signal Draft: Founder Edition
+# Signal Draft: Founder Edition 🚀
 
-A web-based multiplayer drafting game where founders draft cards (Trends, Problems, Tech, Assets) to create startup concepts, then score them collaboratively.
+A web-based multiplayer drafting game where founders draft cards (Trends, Problems, Tech, Assets) to create startup concepts, then score them collaboratively to surface the best ideas.
 
-## Live Demo
+## 🎮 Live Demo
 
-**Production:** https://signalgame.deven.network
+**Production:** https://signal-draft.vercel.app
 
-## How to Play
+| Page | URL |
+|------|-----|
+| Home | https://signal-draft.vercel.app |
+| Game Guide | https://signal-draft.vercel.app/guide |
+| Host a Game | https://signal-draft.vercel.app/create |
+| Join a Game | https://signal-draft.vercel.app/join |
+| Admin Panel | https://signal-draft.vercel.app/admin |
 
-1. **Host a Game** - One player creates a game room on a TV/monitor display
-2. **Join via QR Code** - Mobile players scan the QR code or enter the 6-character room code
-3. **Draft Cards** - Mobile players draft Trend, Problem, and Tech/Asset cards (host facilitates)
-4. **Build Concepts** - Combine drafted cards into startup concepts
-5. **Score & Vote** - Rate each other's concepts on pain, market size, and founder fit
-6. **See Results** - View rankings and superlative awards
+## 📖 How to Play
 
-## Features
+Check out the full interactive guide at [/guide](https://signal-draft.vercel.app/guide)!
+
+**Quick Overview:**
+1. **🏠 Host a Game** - One player creates a game room on a TV/monitor display
+2. **📱 Join via QR Code** - Mobile players scan the QR code or enter the 6-character room code
+3. **🎴 Draft Cards** - 3 rounds of drafting: Trends (pick 3), Problems (pick 3), Tech (pick 1)
+4. **🏗️ Build Concepts** - Combine drafted cards into 2 startup concepts each
+5. **⭐ Score & Vote** - Rate each concept on Pain, Market Size, Founder Fit + Would Invest?
+6. **🏆 See Results** - View rankings and superlative awards!
+
+## ✨ Features
 
 - **QR Code Join** - Board displays a dynamic QR code for instant mobile join
 - **Host as Facilitator** - The game creator controls the flow but doesn't participate in drafting
+- **Real-time Sync** - All players see updates instantly via Pusher WebSockets
+- **Interactive Guide** - Beautiful game guide at `/guide` with emojis and visual hierarchy
 - **Admin Panel** - Password-protected admin page to manage the card deck (`/admin`)
-- **Real-time Sync** - All players see updates instantly via WebSocket
+- **Mobile-First Player View** - Optimized touch interface for drafting and voting
 
-## Tech Stack
+## 🎯 Game Settings
 
-- **Framework:** Next.js 14+ with App Router
+| Setting | Value |
+|---------|-------|
+| Players | 2-6 |
+| Duration | 45-75 minutes |
+| Trends per player | 6 dealt → Pick 3 |
+| Problems per player | 6 dealt → Pick 3 |
+| Tech per player | 5 dealt → Pick 1 |
+| Concepts per player | 2 |
+
+## 🃏 Card Types
+
+| Type | Count | Description |
+|------|-------|-------------|
+| 📈 Trends | 20 | Macro trends shaping the future (AI, Climate, Creator Economy...) |
+| 🔥 Problems | 20 | Painful problems worth solving |
+| ⚡ Tech | 14 | Technologies to build solutions |
+| 💎 Assets | 10 | Unique founder assets and expertise |
+| 🎯 Markets | 10 | Target market segments |
+
+## 🏆 Superlative Awards
+
+At the end of each game, special awards are given:
+
+- **🥇 Most Likely to Raise a Seed** - Highest Pain + Market Size
+- **🎯 Best Founder Fit** - Highest Founder Fit score
+- **🚀 Most Outrageous** - Big opportunity, low founder fit (the moonshot!)
+
+## 🛠️ Tech Stack
+
+- **Framework:** Next.js 16+ with App Router
 - **Realtime:** Pusher (WebSocket communication)
 - **State Storage:** Vercel KV (Upstash Redis)
 - **Styling:** Tailwind CSS v4
 - **Deployment:** Vercel
 
-## Project Structure
+## 📁 Project Structure
 
 ```
 /src
 ├── /app
 │   ├── page.tsx                    # Landing page
+│   ├── /guide/page.tsx             # Interactive game guide
 │   ├── /admin/page.tsx             # Admin panel for card management
 │   ├── /create/page.tsx            # Host creates room
 │   ├── /join/page.tsx              # Player joins with code
@@ -48,7 +91,7 @@ A web-based multiplayer drafting game where founders draft cards (Trends, Proble
 │   ├── /admin/*                    # Admin panel components
 │   ├── /board/*                    # Board view components
 │   ├── /player/*                   # Mobile player components
-│   └── /ui/*                       # Shared UI components
+│   └── /ui/*                       # Shared UI components (Logo, Button, QR)
 ├── /lib
 │   ├── game-state.ts               # State machine & transitions
 │   ├── admin-kv.ts                 # Admin card deck KV operations
@@ -61,7 +104,7 @@ A web-based multiplayer drafting game where founders draft cards (Trends, Proble
     └── useGameState.ts             # React hook for realtime state
 ```
 
-## Local Development
+## 💻 Local Development
 
 ### Prerequisites
 
@@ -97,7 +140,7 @@ A web-based multiplayer drafting game where founders draft cards (Trends, Proble
    KV_REST_API_URL=your_kv_url
    KV_REST_API_TOKEN=your_kv_token
 
-   # Admin (optional for local dev)
+   # Admin
    ADMIN_PASSWORD=your_admin_password
    ```
 
@@ -108,37 +151,33 @@ A web-based multiplayer drafting game where founders draft cards (Trends, Proble
 
 5. Open http://localhost:3000
 
-## Game Flow
+## 🎬 Game Flow
 
 ```
 LOBBY → TREND_DRAFT → PROBLEM_DRAFT → TECH_ASSET_DRAFT → BUILD_CONCEPTS → SCORING → SUMMARY
 ```
 
-- **Lobby:** Mobile players join via QR code, host starts when ready
-- **Draft Rounds:** Mobile players pick cards (host doesn't draft)
-- **Build Phase:** Players create startup concepts from their drafted cards
-- **Scoring:** Players rate each concept 1-5 on multiple criteria
-- **Summary:** Final rankings and superlative awards displayed
+| Phase | What Happens |
+|-------|--------------|
+| Lobby | Mobile players join via QR code, host starts when ready |
+| Trend Draft | Each player picks 3 trends from 6 dealt |
+| Problem Draft | Each player picks 3 problems from 6 dealt |
+| Tech Draft | Each player picks 1 tech from 5 dealt |
+| Build Concepts | Players create 2 startup concepts using their cards |
+| Scoring | Everyone rates every concept (1-5 scales + Would Invest) |
+| Summary | Rankings revealed, superlatives awarded! |
 
-## Views
+## 📱 Views
 
 | View | URL | Purpose |
 |------|-----|---------|
-| Board | `/board/[roomCode]` | TV/monitor display with QR code, shows all player progress |
-| Player | `/play/[roomCode]` | Mobile-optimized for card selection and concept building |
-| Admin | `/admin` | Password-protected card deck management |
+| Home | `/` | Landing page with Host/Join buttons |
+| Guide | `/guide` | Interactive game instructions |
+| Board | `/board/[roomCode]` | TV/monitor display with QR code |
+| Player | `/play/[roomCode]` | Mobile interface for drafting & voting |
+| Admin | `/admin` | Password-protected card management |
 
-## Card Types
-
-| Type | Count | Description |
-|------|-------|-------------|
-| Trends | 20 | Macro trends shaping the future (AI, Climate, etc.) |
-| Problems | 20 | Painful problems worth solving |
-| Tech | 14 | Technologies to build solutions |
-| Assets | 10 | Unique founder assets and expertise |
-| Markets | 10 | Target market segments |
-
-## Admin Panel
+## ⚙️ Admin Panel
 
 Access the admin panel at `/admin` to:
 
@@ -149,6 +188,6 @@ Access the admin panel at `/admin` to:
 
 Changes persist globally and affect all future games.
 
-## License
+## 📄 License
 
 Private project - All rights reserved
