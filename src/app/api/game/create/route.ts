@@ -16,7 +16,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Create the game
-    const game = createGame(hostName.trim(), settings);
+    const game = await createGame(hostName.trim(), settings);
 
     // Save to KV store
     await saveGame(game);

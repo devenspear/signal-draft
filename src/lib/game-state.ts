@@ -10,6 +10,7 @@ import {
   GameSettings,
   CardDeck,
 } from "./types";
+import { getMasterCardDeck } from "./admin-kv";
 import cardsData from "@/data/cards.json";
 
 // Generate a 6-character room code (easy to read aloud)
@@ -36,35 +37,51 @@ const VALID_TRANSITIONS: Record<GameState, GameState[]> = {
   ENDED: [],
 };
 
+// Helper to load card deck from KV or fallback to JSON
+async function getCardDeck(): Promise<CardDeck> {
+  try {
+    const kvDeck = await getMasterCardDeck();
+    if (kvDeck) {
+      return kvDeck;
+    }
+  } catch (error) {
+    console.warn("Failed to load cards from KV, using JSON fallback:", error);
+  }
+  return cardsData as CardDeck;
+}
+
 // Create a new game
-export function createGame(hostName: string, settings?: Partial<GameSettings>): Game {
+export async function createGame(hostName: string, settings?: Partial<GameSettings>): Promise<Game> {
   const roomCode = generateRoomCode();
   const hostPlayerId = generateId();
   const gameSettings = { ...DEFAULT_GAME_SETTINGS, ...settings };
 
-  // Initialize cards from JSON data
+  // Load cards from KV (with JSON fallback)
+  const cardDeck = await getCardDeck();
+
+  // Initialize cards for the game
   const cards: Card[] = [
-    ...(cardsData as CardDeck).trends.map((c) => ({
+    ...cardDeck.trends.map((c) => ({
       ...c,
       status: "available" as const,
       createdBy: "system" as const,
     })),
-    ...(cardsData as CardDeck).problems.map((c) => ({
+    ...cardDeck.problems.map((c) => ({
       ...c,
       status: "available" as const,
       createdBy: "system" as const,
     })),
-    ...(cardsData as CardDeck).tech.map((c) => ({
+    ...cardDeck.tech.map((c) => ({
       ...c,
       status: "available" as const,
       createdBy: "system" as const,
     })),
-    ...(cardsData as CardDeck).assets.map((c) => ({
+    ...cardDeck.assets.map((c) => ({
       ...c,
       status: "available" as const,
       createdBy: "system" as const,
     })),
-    ...(cardsData as CardDeck).markets.map((c) => ({
+    ...cardDeck.markets.map((c) => ({
       ...c,
       status: "available" as const,
       createdBy: "system" as const,
