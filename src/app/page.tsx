@@ -92,6 +92,9 @@ export default function Home() {
       {/* Footer */}
       <footer className="mt-16 text-center text-gray-600 text-sm">
         <p>2-6 players | 45-75 minutes | Best played in person</p>
+        <Link href="/guide" className="text-green-400 hover:text-green-300 mt-2 inline-block">
+          Read the full game guide →
+        </Link>
       </footer>
     </main>
   );
