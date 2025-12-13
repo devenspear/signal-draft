@@ -15,15 +15,15 @@ interface CardSelectorProps {
 const roundInfo: Record<string, { title: string; instruction: string }> = {
   ROUND_TREND_DRAFT: {
     title: "Draft Trends",
-    instruction: "Select the macro trends you believe will shape the future",
+    instruction: "Browse all available trends and select the ones you believe will shape the future",
   },
   ROUND_PROBLEM_DRAFT: {
     title: "Draft Problems",
-    instruction: "Choose painful problems worth solving",
+    instruction: "Browse all available problems and choose the ones worth solving",
   },
   ROUND_TECH_ASSET_DRAFT: {
     title: "Draft Tech",
-    instruction: "Select technologies to power your startup",
+    instruction: "Browse all available technologies and select the ones to power your startup",
   },
 };
 

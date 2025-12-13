@@ -21,7 +21,7 @@ Check out the full interactive guide at [/guide](https://signal-draft.vercel.app
 **Quick Overview:**
 1. **🏠 Host a Game** - One player creates a game room on a TV/monitor display
 2. **📱 Join via QR Code** - Mobile players scan the QR code or enter the 6-character room code
-3. **🎴 Draft Cards** - 3 rounds of drafting: Trends (pick 3), Problems (pick 3), Tech (pick 1)
+3. **🎴 Draft Cards** - 3 rounds of drafting from ALL available cards: Trends (pick 3 from 20), Problems (pick 3 from 20), Tech (pick 1 from 14)
 4. **🏗️ Build Concepts** - Combine drafted cards into 2 startup concepts each
 5. **⭐ Score & Vote** - Rate each concept on Pain, Market Size, Founder Fit + Would Invest?
 6. **🏆 See Results** - View rankings and superlative awards!
@@ -41,9 +41,9 @@ Check out the full interactive guide at [/guide](https://signal-draft.vercel.app
 |---------|-------|
 | Players | 2-6 |
 | Duration | 45-75 minutes |
-| Trends per player | 6 dealt → Pick 3 |
-| Problems per player | 6 dealt → Pick 3 |
-| Tech per player | 5 dealt → Pick 1 |
+| Trends per player | All 20 available → Pick 3 |
+| Problems per player | All 20 available → Pick 3 |
+| Tech per player | All 14 available → Pick 1 |
 | Concepts per player | 2 |
 
 ## 🃏 Card Types
@@ -160,9 +160,9 @@ LOBBY → TREND_DRAFT → PROBLEM_DRAFT → TECH_ASSET_DRAFT → BUILD_CONCEPTS 
 | Phase | What Happens |
 |-------|--------------|
 | Lobby | Mobile players join via QR code, host starts when ready |
-| Trend Draft | Each player picks 3 trends from 6 dealt |
-| Problem Draft | Each player picks 3 problems from 6 dealt |
-| Tech Draft | Each player picks 1 tech from 5 dealt |
+| Trend Draft | Each player picks 3 trends from all 20 available |
+| Problem Draft | Each player picks 3 problems from all 20 available |
+| Tech Draft | Each player picks 1 tech from all 14 available |
 | Build Concepts | Players create 2 startup concepts using their cards |
 | Scoring | Everyone rates every concept (1-5 scales + Would Invest) |
 | Summary | Rankings revealed, superlatives awarded! |

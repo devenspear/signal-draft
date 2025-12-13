@@ -217,40 +217,33 @@ export function transitionState(game: Game, newState: GameState): Game {
 }
 
 // Deal cards to players for a round (excludes host - they don't draft)
+// Now gives ALL players access to ALL available cards of the current type
 function dealCards(game: Game, cardType: "trend" | "problem" | "tech"): Game {
   const availableCards = game.cards.filter(
     (c) => c.type === cardType && c.status === "available"
   );
 
-  // Shuffle available cards
-  const shuffled = [...availableCards].sort(() => Math.random() - 0.5);
-
-  const cardsPerPlayer =
-    cardType === "trend"
-      ? game.settings.trendsDealtPerPlayer
-      : cardType === "problem"
-      ? game.settings.problemsDealtPerPlayer
-      : game.settings.techDealtPerPlayer;
-
   const playerHands: Record<string, string[]> = {};
   const updatedCards = [...game.cards];
+
+  // Get all available card IDs for this type
+  const allCardIds = availableCards.map((c) => c.id);
 
   // Only deal cards to non-host players (mobile users)
   const mobilePlayers = game.players.filter((p) => !p.isHost);
 
-  mobilePlayers.forEach((player, index) => {
-    const startIdx = index * cardsPerPlayer;
-    const hand = shuffled.slice(startIdx, startIdx + cardsPerPlayer);
-    playerHands[player.id] = hand.map((c) => c.id);
+  // Give all players access to ALL available cards of this type
+  mobilePlayers.forEach((player) => {
+    playerHands[player.id] = allCardIds;
 
-    // Mark cards as in_hand
-    hand.forEach((card) => {
-      const cardIndex = updatedCards.findIndex((c) => c.id === card.id);
+    // Mark cards as in_hand for all players
+    allCardIds.forEach((cardId) => {
+      const cardIndex = updatedCards.findIndex((c) => c.id === cardId);
       if (cardIndex >= 0) {
         updatedCards[cardIndex] = {
           ...updatedCards[cardIndex],
           status: "in_hand",
-          ownerPlayerId: player.id,
+          // Don't set ownerPlayerId yet - will be set when they lock picks
         };
       }
     });
